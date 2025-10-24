@@ -28,11 +28,11 @@ the MCP services for LLM usage.
 
 ```json
 {
-  "servers": {
-    "jp-geocoder": {
+  "mcpServers": {
+    "geolonia-streaminghttp": {
       "transport": { "type": "streaming-http", "url": "http://localhost:8000/mcp" },
       "env": {
-        "GEOCODER_BASE": "http://marionomac-mini.local",
+        "GEOCODER_BASE": "http://mb.georepublic.info",
         "GEOCODER_PATH": "/"
       }
     }
@@ -48,15 +48,6 @@ MCP service.
 ```json
 {
   "mcpServers": {
-    "geolonia-remote": {
-      "command": "/opt/homebrew/bin/uvx",
-      "args": [
-        "mcp-proxy",
-        "http://marionomac-mini.local/mcpLocation/sse",
-        "--transport=sse",
-        "-H", "X-API-Key: supersecret"
-      ]
-    },
     "geolonia-streaminghttp": {
       "command": "/opt/homebrew/bin/uvx",
       "args": [
